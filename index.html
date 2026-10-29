@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#faf6f3">
+  <meta name="description" content="Patrycja Studio – spokojny start w pracy online. 10 pomysłów na usługi, plan działania i generator pierwszej oferty.">
+  <title>Patrycja Studio — Twój dobry początek</title>
+  <style>
+    :root { --ink:#262038; --ink-2:#5f5870; --muted:#817c89; --paper:#faf7f4; --white:#fff; --rose:#ef8c9f; --rose-dark:#ad3b68; --lav:#e9dff6; --violet:#6c4e93; --line:#eae3e5; --mint:#d6ede7; --shadow:0 18px 60px rgba(54,39,64,.08); --r:24px; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; scroll-padding-top:88px; }
+    body { margin:0; background:var(--paper); color:var(--ink); font-family: ui-sans-serif, system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; line-height:1.62; }
+    button,input,select,textarea { font:inherit; }
+    button { cursor:pointer; }
+    a { color:inherit; }
+    a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible { outline:3px solid #936fc7; outline-offset:3px; }
+    ::selection { background:#ebc6e8; color:var(--ink); }
+    .wrap { width:min(1160px,calc(100% - 40px)); margin-inline:auto; }
+    .skip { position:absolute;top:-60px;left:16px;background:white;padding:10px 15px;z-index:100; }
+    .skip:focus { top:10px; }
+    .top { position:sticky;top:0;z-index:40;background:rgba(250,247,244,.9);border-bottom:1px solid rgba(100,79,100,.09);backdrop-filter:blur(18px); }
+    .nav { min-height:75px; display:flex; align-items:center; justify-content:space-between;gap:18px; }
+    .brand { font-weight:850; font-size:1.25rem;letter-spacing:-.05em;text-decoration:none;display:flex;align-items:center;gap:12px;white-space:nowrap; }
+    .brand-mark { display:grid;place-items:center;width:41px;height:41px;border-radius:14px;background:var(--ink);color:#fff;font-size:1rem;letter-spacing:-.03em; }
+    .nav-links { display:flex;align-items:center;gap:27px; }
+    .nav-links a { text-decoration:none;font-size:.91rem;font-weight:650;color:var(--ink-2); }
+    .nav-links a:hover { color:var(--rose-dark); }
+    .nav-cta { padding:11px 18px; border-radius:100px;background:var(--ink);color:white!important; }
+    .hero { position:relative;overflow:hidden;padding:92px 0 102px; isolation:isolate; }
+    .hero:before { content:"";position:absolute; z-index:-2; width:740px;height:740px;border-radius:50%;background:radial-gradient(circle,rgba(234,193,212,.40),transparent 69%);right:-240px;top:-280px; }
+    .hero:after { content:"";position:absolute; z-index:-2; width:620px;height:620px;border-radius:50%;background:radial-gradient(circle,rgba(212,201,241,.39),transparent 71%);left:-300px;bottom:-350px; }
+    .hero-grid { display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:56px; }
+    .eyebrow { display:inline-flex;align-items:center;gap:8px;padding:8px 13px;border:1px solid rgba(136,99,151,.15);background:rgba(255,255,255,.68);border-radius:100px;font-weight:780;text-transform:uppercase;font-size:.72rem;letter-spacing:.12em;color:var(--violet); }
+    .eyebrow .dot { width:8px;height:8px;background:#ad7095;border-radius:50%; }
+    h1,h2,h3,h4,p { margin-top:0; }
+    h1 { font-size:clamp(3.1rem,6vw,5.65rem);line-height:1.065;letter-spacing:-.075em;margin:22px 0 24px;max-width:780px; }
+    h1 em { font-style:normal;color:var(--rose-dark); }
+    .lead { max-width:590px;font-size:1.13rem;color:var(--ink-2);line-height:1.8;margin-bottom:28px; }
+    .hero-buttons { display:flex;flex-wrap:wrap;gap:12px; }
+    .btn { border:0;display:inline-flex;justify-content:center;align-items:center;gap:9px;text-decoration:none;min-height:51px;padding:12px 22px;border-radius:100px;font-size:.92rem;font-weight:760;transition:transform .2s,box-shadow .2s,background .2s; }
+    .btn:hover { transform:translateY(-2px); }
+    .btn-dark { color:#fff;background:var(--ink);box-shadow:0 12px 30px rgba(38,32,56,.16); }
+    .btn-light { color:var(--ink);background:white;border:1px solid var(--line); }
+    .btn-rose { color:white;background:var(--rose-dark); }
+    .small-note { font-size:.82rem;color:var(--muted);margin:17px 0 0; }
+    .hero-art { position:relative;min-height:460px;display:grid;place-items:center; }
+    .art-back { position:absolute;inset:35px 28px 34px 55px;transform:rotate(7deg);border-radius:43% 57% 49% 51% / 54% 43% 57% 46%;background:linear-gradient(145deg,#efd2df,#d9c7ea 63%,#cadfd8);box-shadow:0 35px 80px rgba(90,52,89,.13); }
+    .art-inner { position:relative;z-index:1;background:#fffdfc; width:min(335px,87%);border:1px solid rgba(255,255,255,.85);border-radius:25px;padding:25px;box-shadow:0 20px 65px rgba(48,38,61,.19);transform:rotate(-3deg); }
+    .art-head {display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);padding-bottom:15px;margin-bottom:22px;}
+    .mini-dots {display:flex;gap:6px}.mini-dots i{width:8px;height:8px;border-radius:50%;background:#e5a3b2}.mini-dots i:nth-child(2){background:#e9d2b1}.mini-dots i:nth-child(3){background:#a1cbbf}
+    .art-symbol {width:75px;height:75px;display:grid;place-items:center;border-radius:22px;background:#f5e3ed;font-size:2.8rem;margin-bottom:20px;}
+    .art-inner h3 {font-size:1.46rem;letter-spacing:-.05em;line-height:1.24;margin-bottom:10px;}
+    .art-inner p {color:var(--ink-2);font-size:.88rem;margin-bottom:19px;}
+    .art-item {display:flex;align-items:center;gap:11px;background:#f9f6f9;border-radius:14px;margin-top:9px;padding:11px 13px;font-size:.81rem;font-weight:740;}
+    .art-item b {background:#e3f0e9;color:#3b8067;border-radius:50%;width:24px;height:24px;display:grid;place-items:center;font-size:.76rem;}
+    .floating {position:absolute;z-index:2;border-radius:16px;padding:12px 16px;background:white;box-shadow:0 12px 35px rgba(49,31,52,.14);font-weight:770;font-size:.8rem;}
+    .float-one {top:66px;right:0;transform:rotate(8deg)} .float-two {bottom:74px;left:0;transform:rotate(-7deg)}
+    section { padding:88px 0; }
+    .section-head {display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:33px;}
+    .kicker {display:block;font-size:.76rem;letter-spacing:.13em;text-transform:uppercase;color:var(--rose-dark);font-weight:850;margin-bottom:10px;}
+    h2 {font-size:clamp(2rem,4.4vw,3.1rem);line-height:1.13;letter-spacing:-.06em;margin-bottom:12px;}
+    .section-head p,.section-intro {max-width:580px;color:var(--ink-2);margin-bottom:0;}
+    .steps {display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+    .step {background:#fff;border:1px solid var(--line);padding:25px;border-radius:var(--r);box-shadow:var(--shadow);}
+    .step-num {width:44px;height:44px;display:grid;place-items:center;border-radius:14px;background:#f3e5ef;color:var(--rose-dark);font-weight:900;font-size:1.08rem;margin-bottom:17px;}
+    .step:nth-child(2) .step-num {background:var(--lav);color:var(--violet)}
+    .step:nth-child(3) .step-num {background:var(--mint);color:#317a64}
+    .step h3 {font-size:1.08rem;letter-spacing:-.025em;margin-bottom:6px;}
+    .step p {font-size:.9rem;color:var(--ink-2);margin-bottom:0;}
+    .ideas {background:#fff;}
+    .filters {display:flex;flex-wrap:wrap;gap:9px;margin-bottom:24px;}
+    .filter {border-radius:100px;border:1px solid var(--line);background:#fff;color:var(--ink-2);padding:9px 16px;font-weight:700;font-size:.85rem;}
+    .filter[aria-pressed="true"] {background:var(--ink);color:white;border-color:var(--ink)}
+    .idea-grid {display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+    .idea {background:var(--paper);border:1px solid var(--line);border-radius:22px;padding:23px;display:flex;flex-direction:column;min-height:276px;transition:transform .2s,box-shadow .2s;}
+    .idea:hover {transform:translateY(-3px);box-shadow:var(--shadow);}
+    .idea[hidden] {display:none;}
+    .idea-header {display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:14px;}
+    .idea-icon {height:53px;width:53px;border-radius:17px;background:#f5dfe8;display:grid;place-items:center;font-size:1.65rem;}
+    .idea:nth-child(3n + 2) .idea-icon {background:#e6def3;}
+    .idea:nth-child(3n + 3) .idea-icon {background:#dcece5;}
+    .idea-tag {font-size:.72rem;color:var(--violet);font-weight:810;background:#f0e9f7;padding:5px 9px;border-radius:100px;}
+    .idea h3 {font-size:1.11rem;letter-spacing:-.03em;margin-bottom:8px;line-height:1.27;}
+    .idea p {font-size:.86rem;color:var(--ink-2);margin-bottom:16px;flex:1;}
+    .idea-price {color:var(--rose-dark);font-weight:850;font-size:.87rem;margin-bottom:15px;}
+    .idea button {background:transparent;color:var(--ink);border:0;padding:0;align-self:flex-start;font-size:.86rem;font-weight:830;text-decoration:underline;text-decoration-color:#d9aac3;text-underline-offset:5px;}
+    .fine {font-size:.78rem;color:var(--muted);margin-top:18px;}
+    .plan-grid {display:grid;grid-template-columns:1fr .8fr;gap:34px;align-items:center;}
+    .plan-panel {background:white;border:1px solid var(--line);border-radius:28px;padding:28px;box-shadow:var(--shadow);}
+    .plan-header {display:flex;justify-content:space-between;gap:15px;align-items:center;margin-bottom:18px;}
+    .plan-header h3 {margin:0;letter-spacing:-.03em;}
+    .progress {background:#eae5ed;height:10px;border-radius:100px;overflow:hidden;margin-bottom:20px;}
+    .progress > div {background:linear-gradient(90deg,#db7a99,#8266b0);height:100%;width:0;transition:width .25s;}
+    .task {display:flex;align-items:flex-start;gap:12px;padding:13px 2px;border-bottom:1px solid var(--line);font-size:.9rem;cursor:pointer;}
+    .task:last-of-type {border-bottom:0;}
+    .task input {accent-color:var(--rose-dark);width:18px;height:18px;flex:none;margin-top:3px;}
+    .task input:checked + span {text-decoration:line-through;color:var(--muted);}
+    .gentle-card {background:#eee4f1;border-radius:28px;padding:35px;position:relative;overflow:hidden;}
+    .gentle-card:after{content:'✺';position:absolute;right:-13px;bottom:-92px;color:rgba(122,81,151,.13);font-size:15rem;line-height:1;}
+    .gentle-card h2{font-size:2.1rem;position:relative;z-index:1;}
+    .gentle-card p{color:var(--ink-2);position:relative;z-index:1;}
+    .gentle-card ul {padding-left:19px;color:var(--ink-2);font-size:.91rem;position:relative;z-index:1;}
+    .builder {background:linear-gradient(145deg,#2c233d,#4f365d);color:white;}
+    .builder .kicker {color:#f5b5c9;}
+    .builder .section-intro {color:#e8daeb;max-width:650px;}
+    .builder-grid {display:grid;grid-template-columns:.9fr 1.1fr;gap:22px;margin-top:32px;}
+    .form-card,.preview-card {background:#fff;border-radius:24px;padding:27px;color:var(--ink);}
+    .form-card label {display:block;font-size:.82rem;font-weight:800;margin-bottom:7px;}
+    .field {margin-bottom:15px;}
+    .field input,.field select,.field textarea {width:100%;background:#fbfafb;border:1px solid #ded8e0;color:var(--ink);border-radius:12px;padding:12px 13px;min-height:47px;}
+    .field textarea {min-height:94px;resize:vertical;}
+    .field-hint {font-size:.75rem;color:var(--muted);margin:5px 0 0;}
+    .form-card .btn {width:100%;}
+    .preview-card {background:#fff9fb;display:flex;flex-direction:column;}
+    .preview-top {display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:17px;}
+    .preview-top h3 {margin:0;letter-spacing:-.035em;font-size:1.1rem;}
+    .sample-label {font-size:.72rem;background:#f1e1e9;border-radius:100px;padding:5px 9px;font-weight:800;color:#854d6c;}
+    .letter {white-space:pre-wrap;word-break:break-word;flex:1;min-height:340px;font-size:.91rem;line-height:1.85;color:#3e344a;background:#fff;border:1px solid #eee3ec;border-radius:16px;padding:22px;}
+    .preview-actions {display:flex;gap:9px;flex-wrap:wrap;margin-top:17px;}
+    .preview-actions .btn {min-height:43px;padding:9px 15px;}
+    .footer {background:#fff;border-top:1px solid var(--line);padding:39px 0 24px;}
+    .foot-top {display:flex;align-items:start;justify-content:space-between;gap:28px;}
+    .foot-top p {color:var(--ink-2);max-width:510px;font-size:.88rem;}
+    .foot-meta {display:flex;gap:20px;flex-wrap:wrap;color:var(--ink-2);font-size:.81rem;border-top:1px solid var(--line);margin-top:25px;padding-top:17px;}
+    .foot-meta span:last-child {margin-left:auto;}
+    .toast {position:fixed;z-index:50;bottom:25px;left:50%;transform:translate(-50%,24px);max-width:calc(100vw - 30px);background:var(--ink);color:#fff;padding:13px 20px;border-radius:100px;font-size:.86rem;opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;box-shadow:0 10px 40px #2318314d;text-align:center;}
+    .toast.show{opacity:1;transform:translate(-50%,0);}
+    @media(max-width:1000px){.hero-grid{gap:15px}.idea-grid{grid-template-columns:repeat(2,1fr)}.nav-links{gap:14px}.hero-art{min-height:380px}.float-one{right:-12px}}
+    @media(max-width:760px){.wrap{width:min(100% - 30px,620px)}.nav{min-height:65px}.nav-links a:not(.nav-cta){display:none}.nav-links{gap:0}.nav-cta{padding:9px 12px;font-size:.8rem!important}.brand{font-size:1.03rem}.brand-mark{height:36px;width:36px}.hero{padding:56px 0 55px}.hero-grid{grid-template-columns:1fr;gap:17px}.hero-art{min-height:342px}.art-back{inset:15px 32px 18px}.art-inner{width:min(310px,78%);padding:19px}.float-one{right:2px;top:25px}.float-two{bottom:20px;left:1px}.lead{font-size:1rem}.hero-buttons .btn{font-size:.84rem;padding:12px 16px}section{padding:62px 0}.section-head{display:block}.steps{grid-template-columns:1fr}.idea-grid{grid-template-columns:1fr}.idea{min-height:0}.plan-grid,.builder-grid{grid-template-columns:1fr}.gentle-card{padding:27px}.form-card,.preview-card,.plan-panel{padding:20px}.foot-top{display:block}.foot-meta span:last-child{margin-left:0}.letter{min-height:315px}.small-note{max-width:470px}}
+    @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important}}
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Przejdź do treści</a>
+  <header class="top">
+    <div class="wrap nav">
+      <a class="brand" href="#top" aria-label="Patrycja Studio — strona główna"><span class="brand-mark">P<span style="color:#f3b1c3">.</span></span> patrycja<span style="color:#ae5b80">studio</span></a>
+      <nav class="nav-links" aria-label="Nawigacja główna">
+        <a href="#jak-to-dziala">Jak zacząć</a><a href="#pomysly">10 pomysłów</a><a href="#plan">Mój plan</a><a class="nav-cta" href="#oferta">Stwórz ofertę ↗</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <div class="hero" id="top">
+      <div class="wrap hero-grid">
+        <div>
+          <span class="eyebrow"><span class="dot"></span> Twój nowy rozdział</span>
+          <h1>Cześć,<br><em>Patrycjo!</em> ♡</h1>
+          <p class="lead">Miło Cię poznać! Jestem ChatGPT i mogę pomóc Ci krok po kroku stworzyć coś własnego. Nie potrzebujesz idealnego CV, wielkiego budżetu ani znajomości wszystkich programów. Zaczniemy od jednej małej, konkretnej usługi.</p>
+          <div class="hero-buttons"><a href="#pomysly" class="btn btn-dark">Odkryj 10 pomysłów <span aria-hidden="true">↗</span></a><a href="#plan" class="btn btn-light">Zobacz plan na start</a></div>
+          <p class="small-note">Bez obietnic łatwych pieniędzy. Z konkretnymi zadaniami, które możesz wykonywać we własnym tempie.</p>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="art-back"></div>
+          <div class="art-inner">
+            <div class="art-head"><strong style="font-size:.82rem">Mój mały plan ✨</strong><span class="mini-dots"><i></i><i></i><i></i></span></div>
+            <div class="art-symbol">🌷</div>
+            <h3>Wszystko zaczyna się od pierwszego kroku.</h3>
+            <p>Nie musisz robić wszystkiego. Wystarczy, że wybierzesz, od czego chcesz zacząć.</p>
+            <div class="art-item"><b>✓</b> Jeden pomysł</div>
+            <div class="art-item"><b>✓</b> Jedna próbka pracy</div>
+            <div class="art-item"><b>✓</b> Pierwsza oferta</div>
+          </div>
+          <div class="floating float-one">💗 Dasz radę zacząć</div>
+          <div class="floating float-two">✨ Krok po kroku</div>
+        </div>
+      </div>
+    </div>
+    <section id="jak-to-dziala">
+      <div class="wrap">
+        <div class="section-head"><div><span class="kicker">Prosto i bez presji</span><h2>Jak mogę Ci pomóc?</h2></div><p>Ty decydujesz, co chcesz robić i odpowiadasz za efekt. Ja pomogę Ci przygotować treści, pomysły, układy, wiadomości do klientów i proste instrukcje.</p></div>
+        <div class="steps">
+          <article class="step"><div class="step-num">01</div><h3>Wybierz jedną usługę</h3><p>Nie dziesięć naraz. Na początek coś, co wydaje się dla Ciebie naturalne i możliwe do nauczenia.</p></article>
+          <article class="step"><div class="step-num">02</div><h3>Stwórz próbkę</h3><p>Razem przygotujemy przykładową pracę, którą możesz pokazać przyszłemu klientowi. Zaznaczymy, że to projekt próbny.</p></article>
+          <article class="step"><div class="step-num">03</div><h3>Wyślij pierwszą ofertę</h3><p>Ułożymy prostą, uczciwą wiadomość do lokalnych firm i osób, którym taka usługa może pomóc.</p></article>
+        </div>
+      </div>
+    </section>
+    <section class="ideas" id="pomysly">
+      <div class="wrap">
+        <div class="section-head"><div><span class="kicker">Znaleźć własny sposób</span><h2>10 pomysłów na pracę z AI</h2></div><p>To propozycje usług i produktów, które można przygotowywać z moją pomocą. Kliknij wybrany pomysł, a wstawię go do generatora oferty na dole.</p></div>
+        <div class="filters" role="group" aria-label="Filtruj pomysły">
+          <button class="filter" type="button" data-filter="all" aria-pressed="true">Wszystkie (10)</button>
+          <button class="filter" type="button" data-filter="beginner" aria-pressed="false">Łatwiejsze na start</button>
+          <button class="filter" type="button" data-filter="creative" aria-pressed="false">Kreatywne</button>
+          <button class="filter" type="button" data-filter="business" aria-pressed="false">Dla małych firm</button>
+        </div>
+        <div class="idea-grid" id="ideaGrid">
+          <article class="idea" data-category="beginner business" data-service="Opisy produktów do sklepu internetowego"><div class="idea-header"><span class="idea-icon">🛍️</span><span class="idea-tag">Dobry start</span></div><h3>01. Opisy produktów</h3><p>Proste, czytelne opisy na podstawie danych i zdjęć przekazanych przez sklep.</p><div class="idea-price">100–300 zł / 20 opisów*</div><button type="button" class="choose">Wybieram tę usługę ↗</button></article>
+          <article class="idea" data-category="beginner business creative" data-service="Posty na Facebooka i Instagrama"><div class="idea-header"><span class="idea-icon">💬</span><span class="idea-tag">Stała współpraca</span></div><h3>02. Posty do social mediów</h3><p>Teksty, grafiki i kalendarz publikacji dla salonu, sklepu czy niewielkiej firmy.</p><div class="idea-price">200–500 zł / miesiąc*</div><button type="button" class="choose">Wybieram tę usługę ↗</button></article>
+          <article class="idea" data-category="beginner" data-service="Przygotowanie CV i listu motywacyjnego"><div class="idea-header"><span class="idea-icon">📝</span><span class="idea-tag">Dobry start</span></div><h3>03. CV i listy motywacyjne</h3><p>Estetyczne dokumenty oparte wyłącznie na prawdziwych informacjach od klienta.</p><div class="idea-price">50–120 zł / komplet*</div><button type="button" class="choose">Wybieram tę usługę ↗</button></article>
+          <article class="idea" data-category="beginner creative business" data-service="Projekt ulotki, plakatu lub cennika"><div class="idea-header"><span class="idea-icon">🎨</span><span class="idea-tag">Kreatywne</span></div><h3>04. Ulotki i cenniki</h3><p>Proste materiały reklamowe i przejrzyste cenniki do internetu lub druku.</p><div class="idea-price">50–150 zł / projekt*</div><button type="button" class="choose">Wybieram tę usługę ↗</button></article>
+          <article class="idea" data-category="business" data-service="Zdalne wsparcie administracyjne"><div class="idea-header"><span class="idea-icon">📅</span><span class="idea-tag">Organizacja</span></div><h3>05. Wirtualna asystentka</h3><p>Porządkowanie informacji, harmonogramów i szkiców wiadomości dla przedsiębiorców.</p><div class="idea-price">25–45 zł / godzina*</div><button type="button" class="choose">Wybieram tę usługę ↗</button></article>
+          <article class="idea" data-category="creative business" data-service="Montaż krótkiego filmu reklamowego"><div class="idea-header"><span class="idea-icon">🎬</span><span class="idea-tag">Do nauczenia</span></div><h3>06. Krótkie filmy i rolki</h3><p>Napisy, scenariusze i montaż krótkich nagrań dostarczonych przez klienta.</p><div class="idea-price">70–200 zł / film*</div><button type="button" class="choose">Wybieram tę usługę ↗</button></article>
+          <article class="idea" data-category="creative" data-service="Materiały edukacyjne PDF dla dzieci"><div class="idea-header"><span class="idea-icon">📚</span><span class="idea-tag">Własny produkt</span></div><h3>07. Karty pracy dla dzieci</h3><p>Kolorowanki i ćwiczenia do druku, po sprawdzeniu poprawności treści.</p><div class="idea-price">10–35 zł / zestaw PDF*</div><button type="button" class="choose">Wybieram tę usługę ↗</button></article>
+          <article class="idea" data-category="creative" data-service="Personalizowana bajka PDF"><div class="idea-header"><span class="idea-icon">🦄</span><span class="idea-tag">Kreatywne</span></div><h3>08. Personalizowane bajki</h3><p>Oryginalne opowiadania z wybraną tematyką, przygotowane jako ładny PDF.</p><div class="idea-price">40–100 zł / bajka*</div><button type="button" class="choose">Wybieram tę usługę ↗</button></article>
+          <article class="idea" data-category="business creative" data-service="Prosta strona wizytówka"><div class="idea-header"><span class="idea-icon">💻</span><span class="idea-tag">Wymaga nauki</span></div><h3>09. Proste strony WWW</h3><p>Małe strony wizytówki dla firm. Tu ważne są testy i podstawowa wiedza techniczna.</p><div class="idea-price">300–800 zł / strona*</div><button type="button" class="choose">Wybieram tę usługę ↗</button></article>
+          <article class="idea" data-category="beginner business creative" data-service="Projekt menu restauracji"><div class="idea-header"><span class="idea-icon">☕</span><span class="idea-tag">Dla firm</span></div><h3>10. Menu dla restauracji</h3><p>Układ menu i opisy, z weryfikacją cen, składników i alergenów przez lokal.</p><div class="idea-price">100–300 zł / projekt*</div><button type="button" class="choose">Wybieram tę usługę ↗</button></article>
+        </div>
+        <p class="fine">* Przykładowe, orientacyjne ceny ofertowe — nie są gwarancją zleceń, przychodu ani stawek rynkowych. Przed sprzedażą sprawdź zakres pracy i koszt wykonania.</p>
+      </div>
+    </section>
+    <section id="plan">
+      <div class="wrap plan-grid">
+        <div>
+          <span class="kicker">Zamiast wielkich postanowień</span><h2>Plan na pierwsze 7 dni</h2>
+          <p class="section-intro" style="margin-bottom:26px">To nie wyścig. Jeśli potrzebujesz więcej czasu, nic złego się nie stanie. Zaznaczaj wykonane kroki — postęp zapisuje się tylko w tej przeglądarce na Twoim urządzeniu.</p>
+          <div class="gentle-card"><h2>Patrycjo,<br>nie musisz robić wszystkiego sama. ♡</h2><p>Mogę Ci pomóc przygotować:</p><ul><li>przykładowe materiały do portfolio,</li><li>wiadomości do pierwszych klientów,</li><li>prosty cennik i opis usług,</li><li>instrukcje wykonania każdego zlecenia.</li></ul></div>
+        </div>
+        <div class="plan-panel">
+          <div class="plan-header"><h3>Moja lista kroków</h3><strong id="progressText" aria-live="polite">0 / 5</strong></div>
+          <div class="progress" role="progressbar" aria-label="Ukończone zadania" aria-valuemin="0" aria-valuemax="5" aria-valuenow="0" id="progressBar"><div id="progressFill"></div></div>
+          <label class="task"><input type="checkbox" data-step="0"><span>Wybieram jedną usługę, którą chcę przetestować.</span></label>
+          <label class="task"><input type="checkbox" data-step="1"><span>Przygotowuję jedną uczciwie opisaną próbkę pracy.</span></label>
+          <label class="task"><input type="checkbox" data-step="2"><span>Ustalam prostą cenę i zakres oferty.</span></label>
+          <label class="task"><input type="checkbox" data-step="3"><span>Tworzę krótką wiadomość dla klienta.</span></label>
+          <label class="task"><input type="checkbox" data-step="4"><span>Wysyłam pierwszą ofertę do odpowiedniej osoby lub firmy.</span></label>
+          <button id="resetPlan" class="btn btn-light" type="button" style="margin-top:20px;width:100%">Zacznij plan od nowa</button>
+        </div>
+      </div>
+    </section>
+    <section class="builder" id="oferta">
+      <div class="wrap">
+        <span class="kicker">Mały praktyczny pomocnik</span><h2>Stwórz swoją pierwszą ofertę</h2>
+        <p class="section-intro">Wpisz kilka szczegółów. Strona ułoży z nich krótką wiadomość, którą możesz skopiować i wysłać klientowi. Wszystko działa w przeglądarce — bez konta i bez wysyłania danych na serwer.</p>
+        <div class="builder-grid">
+          <form class="form-card" id="offerForm">
+            <div class="field"><label for="service">Co chcesz zaoferować?</label><select id="service" required><option>Opisy produktów do sklepu internetowego</option><option>Posty na Facebooka i Instagrama</option><option>Przygotowanie CV i listu motywacyjnego</option><option>Projekt ulotki, plakatu lub cennika</option><option>Zdalne wsparcie administracyjne</option><option>Montaż krótkiego filmu reklamowego</option><option>Materiały edukacyjne PDF dla dzieci</option><option>Personalizowana bajka PDF</option><option>Prosta strona wizytówka</option><option>Projekt menu restauracji</option></select></div>
+            <div class="field"><label for="client">Do kogo piszesz? (opcjonalnie)</label><input id="client" maxlength="80" placeholder="np. Salon Fryzjerski Róża"></div>
+            <div class="field"><label for="scope">Co dokładnie wykonasz?</label><textarea id="scope" maxlength="350" placeholder="np. Przygotuję 10 krótkich opisów produktów na podstawie podanych informacji." required>Przygotuję 10 krótkich opisów produktów na podstawie przekazanych informacji.</textarea></div>
+            <div class="field"><label for="price">Proponowana cena (zł)</label><input id="price" type="number" min="1" max="100000" step="1" value="120" required><p class="field-hint">Wpisz własną cenę po oszacowaniu pracy.</p></div>
+            <div class="field"><label for="deadline">Czas realizacji</label><select id="deadline"><option>do 3 dni roboczych</option><option>do 5 dni roboczych</option><option>do 7 dni roboczych</option><option>termin do ustalenia</option></select></div>
+            <button type="submit" class="btn btn-rose">Zaktualizuj ofertę ✨</button>
+          </form>
+          <div class="preview-card">
+            <div class="preview-top"><h3>Podgląd wiadomości</h3><span class="sample-label">Do skopiowania</span></div>
+            <div class="letter" id="offerText" aria-live="polite"></div>
+            <div class="preview-actions"><button type="button" id="copyOffer" class="btn btn-dark">📋 Kopiuj wiadomość</button><button type="button" id="downloadOffer" class="btn btn-light">↓ Zapisz jako TXT</button></div>
+            <p class="fine" style="margin-top:12px;margin-bottom:0">Przed wysłaniem sprawdź, czy na pewno możesz wykonać usługę w deklarowanym terminie. Nie dodawaj wymyślonych referencji ani danych klientów.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="wrap">
+      <div class="foot-top"><div><a class="brand" href="#top"><span class="brand-mark">P<span style="color:#f3b1c3">.</span></span> patrycja<span style="color:#ae5b80">studio</span></a><p>Strona startowa przygotowana specjalnie dla Patrycji: inspiracje, pierwszy plan i generator wiadomości do klientów. To początek, który można rozwijać w prawdziwą ofertę usług.</p></div><a class="btn btn-light" href="#top">Wróć na górę ↑</a></div>
+      <div class="foot-meta"><span>© <span id="year">2026</span> Patrycja Studio</span><span>Przykładowa strona — przed ofertowaniem dopracuj zakres usług i warunki rozliczeń.</span><span>Zrobione z sercem ♡</span></div>
+    </div>
+  </footer>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script>
+    (() => {
+      const qs = s => document.querySelector(s);
+      const qsa = s => [...document.querySelectorAll(s)];
+      const notify = msg => { const toast=qs('#toast'); toast.textContent=msg; toast.classList.add('show'); clearTimeout(notify.timer); notify.timer=setTimeout(()=>toast.classList.remove('show'),2800); };
+      qs('#year').textContent = new Date().getFullYear();
+      qsa('[data-filter]').forEach(button=>button.addEventListener('click',()=>{
+        const category=button.dataset.filter;
+        qsa('[data-filter]').forEach(b=>b.setAttribute('aria-pressed',String(b===button)));
+        qsa('.idea').forEach(card=>{ card.hidden=category!=='all'&&!card.dataset.category.split(' ').includes(category); });
+      }));
+      qsa('.idea .choose').forEach(button=>button.addEventListener('click',()=>{
+        const value=button.closest('.idea').dataset.service;
+        qs('#service').value=value;
+        qs('#scope').value='Przygotuję ustalony zakres usługi „'+value+'” na podstawie informacji przekazanych przez klienta.';
+        updateOffer();
+        qs('#oferta').scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});
+        notify('Wybrano usługę. Uzupełnij ofertę poniżej.');
+      }));
+      const boxes=qsa('[data-step]');
+      try { const stored=JSON.parse(localStorage.getItem('patrycja-plan-v1')||'[]'); if(Array.isArray(stored)) boxes.forEach((b,i)=>b.checked=stored.includes(i)); } catch(e) { /* storage may be unavailable */ }
+      const updateProgress=()=>{
+        const checked=boxes.filter(x=>x.checked).length;
+        qs('#progressText').textContent=checked+' / '+boxes.length;
+        qs('#progressFill').style.width=(checked/boxes.length*100)+'%';
+        qs('#progressBar').setAttribute('aria-valuenow',String(checked));
+        try {localStorage.setItem('patrycja-plan-v1',JSON.stringify(boxes.map((b,i)=>b.checked?i:null).filter(i=>i!==null)));} catch(e) { /* localStorage disabled */ }
+      };
+      boxes.forEach(b=>b.addEventListener('change',updateProgress));
+      qs('#resetPlan').addEventListener('click',()=>{boxes.forEach(b=>b.checked=false);updateProgress();notify('Plan został wyzerowany. Możesz zacząć od nowa.');});
+      updateProgress();
+      function buildOffer(){
+        const service=qs('#service').value;
+        const client=qs('#client').value.trim();
+        const scope=qs('#scope').value.trim();
+        const price=Number(qs('#price').value);
+        const deadline=qs('#deadline').value;
+        if(!scope || !Number.isFinite(price) || price<=0){return 'Uzupełnij zakres usługi i poprawną cenę, aby przygotować ofertę.';}
+        return `Dzień dobry${client ? ', '+client : ''}!\n\nMam na imię Patrycja i chciałabym zaproponować pomoc w zakresie: ${service.toLowerCase()}.\n\n${scope}\n\nProponowana cena: ${price.toLocaleString('pl-PL')} zł.\nTermin realizacji: ${deadline}.\n\nJeśli taka pomoc byłaby dla Państwa przydatna, chętnie ustalę szczegóły i odpowiem na pytania.\n\nPozdrawiam serdecznie,\nPatrycja`;
+      }
+      function updateOffer(){qs('#offerText').textContent=buildOffer();}
+      qs('#offerForm').addEventListener('submit',e=>{e.preventDefault();updateOffer();notify('Oferta zaktualizowana. Możesz ją skopiować.');});
+      qs('#copyOffer').addEventListener('click',async()=>{
+        const txt=buildOffer(); if(txt.startsWith('Uzupełnij')) {notify('Najpierw popraw dane oferty.');return;}
+        try{await navigator.clipboard.writeText(txt);notify('Wiadomość skopiowana!');}
+        catch(e){
+          const selection=window.getSelection();const range=document.createRange();range.selectNodeContents(qs('#offerText'));selection.removeAllRanges();selection.addRange(range);notify('Zaznaczono tekst — użyj opcji Kopiuj.');
+        }
+      });
+      qs('#downloadOffer').addEventListener('click',()=>{
+        const txt=buildOffer();if(txt.startsWith('Uzupełnij')){notify('Najpierw popraw dane oferty.');return;}
+        const blob=new Blob(['\ufeff'+txt],{type:'text/plain;charset=utf-8'});
+        const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='oferta-patrycja.txt';a.click();setTimeout(()=>URL.revokeObjectURL(url),3000);notify('Zapisano plik z ofertą.');
+      });
+      updateOffer();
+    })();
+  </script>
+</body>
+</html>
